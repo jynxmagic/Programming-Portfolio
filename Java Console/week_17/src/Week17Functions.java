@@ -69,16 +69,16 @@ class Week17Functions
 		
 		if(ratePC == 0) return capital;
 		
-		float converted_rate_pc = ratePC/100;
+		float fcapital = (float) capital;
 		
-		converted_rate_pc = converted_rate_pc*years;
+		float rate_conv = (float)ratePC/100;
 		
-		float converted_capital = (float) capital;
 		
-		System.out.println(converted_rate_pc);
-		System.out.println(converted_capital);
-
+		for(int i = 0; i < years; i++)
+		{
+			fcapital += fcapital * rate_conv;
+		}
 		
-		return (int) (converted_capital * converted_rate_pc);
+		return Math.round(fcapital);
 	}
 }
